@@ -1,0 +1,429 @@
+$primary-font: 'Baskerville';
+$secondary-font: 'DIN OT';
+
+$primary-color: #E8BC7C;
+$secondary-color: #3a3a3a;
+$third-color: #fffdf7;
+
+@mixin transition-all ($transition) {
+  -webkit-transition: ($transition);
+  -moz-transition: ($transition);
+	-ms-transform: ($transition);
+  -o-transition: ($transition);
+  transition: ($transition);
+}
+
+// STYLESHEET
+
+html {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background-color: $third-color;
+	margin: 0;
+	padding: 0;
+}
+
+section {
+	width: 100vw;
+	height: 100vh;
+}
+
+// TEXT STYLES
+
+h1 {
+  font-family: $primary-font;	
+	font-size: 52px;
+	font-weight: normal;
+	line-height: 60px;
+	color: #E8BC7C;
+	margin: 10px 0;
+}
+
+h2 {
+	font-family: $secondary-font;
+	font-size: 24px;
+	font-weight: bold;
+	text-transform: uppercase;
+	color: #3a3a3a;
+	margin: 10px 0;
+}
+
+h3 {
+	font-family: $primary-font;
+	font-size: 288px;
+	line-height: 320px;
+	font-weight: normal;
+	color: #E8BC7C;
+	margin: 10px 0;
+}
+
+p, body {
+	font-family: $secondary-font;
+	font-size: 18px;
+	font-weight: lighter;
+	line-height: 30px;
+	color: #3a3a3a;
+}
+
+ul {
+	display: inline-block;
+}
+
+// BUTTON & INPUT STYLES
+
+button {
+	font-family: $primary-font;
+	font-size: 24px;
+	color: #E8BC7C;
+	background-color: #3a3a3a;
+	border: 0;
+	padding: 10px 25px;
+	box-shadow: 0 9px 33px 2px rgba(0,0,0,0.42);
+	@include transition-all(all 0.3s ease);
+}
+
+button:hover {
+	border: 0;
+	box-shadow: none;
+	@include transition-all(all 0.3s ease);
+}
+
+button:focus {
+	border: none;
+}
+
+.honeymoon .content button {
+	width: 50%;
+}
+
+.information .map button {
+	z-index: 5;
+	width: 75%;
+	position: relative;
+	// top: -48px;
+	box-shadow: 0 9px 33px 2px rgba(0,0,0,0.42);
+}
+
+.accomodations .map button {
+	z-index: 5;
+	width: 75%;
+	position: relative;
+	float: right;
+	// top: 92%;
+	box-shadow: 0 9px 33px 2px rgba(0,0,0,0.42);
+}
+
+.gallery button {
+	z-index: 5;
+	width: 75%;
+	float: right;
+	position: relative;
+	// top: 92%;
+	box-shadow: 0 9px 33px 2px rgba(0,0,0,0.42);
+}
+
+.rsvp button {
+	width: 50%;
+}
+
+input {
+	width: 50%;
+  display: block;
+  margin: 5px auto 25px;
+  height: 30px;
+  background: transparent;
+  border-width: 0;
+  border-bottom-width: 2px;
+  border-bottom-color: $secondary-color;
+	font-family: $secondary-font;
+	font-size: 18px;
+	font-weight: lighter;
+	line-height: 30px;
+	color: #3a3a3a;
+}
+
+input:focus {
+	outline: none;
+}
+
+// GRID STYLES
+
+.column,
+.columns {
+  width: 100%;
+  float: left;
+  box-sizing: border-box; }
+
+@media (max-width: 758px) {
+  .container {
+    width: 85%;
+    padding: 0; }
+}
+
+@media (min-width: 758px) {
+  .container {
+    width: 80%; }
+  .column,
+  .columns {
+    margin-left: 0%; }
+  .column:first-child,
+  .columns:first-child {
+    margin-left: 0; }
+
+  .one.column,
+  .one.columns                    { width: 4.66666666667%; }
+  .two.columns                    { width: 13.3333333333%; }
+  .three.columns                  { width: 22%;            }
+  .four.columns                   { width: 30.6666666667%; }
+  .five.columns                   { width: 39.3333333333%; }
+  .six.columns                    { width: 48%;            }
+  .seven.columns                  { width: 56.6666666667%; }
+  .eight.columns                  { width: 65.3333333333%; }
+  .nine.columns                   { width: 74.0%;          }
+  .ten.columns                    { width: 82.6666666667%; }
+  .eleven.columns                 { width: 91.3333333333%; }
+  .twelve.columns                 { width: 100%; margin-left: 0; }
+  .one-third.column               { width: 30.6666666667%; }
+  .two-thirds.column              { width: 65.3333333333%; }
+  .one-half.column                { width: 49%; }
+  .fourths.columns                { width: 25%; }
+
+  .offset-by-one.columns          { margin-left: 8.66666666667%; }
+  .offset-by-two.columns          { margin-left: 17.3333333333%; }
+  .offset-by-three.columns        { margin-left: 26%;            }
+  .offset-by-four.columns         { margin-left: 34.6666666667%; }
+  .offset-by-five.columns         { margin-left: 43.3333333333%; }
+  .offset-by-six.columns          { margin-left: 52%;            }
+  .offset-by-seven.columns        { margin-left: 60.6666666667%; }
+  .offset-by-eight.columns        { margin-left: 69.3333333333%; }
+  .offset-by-nine.columns         { margin-left: 78.0%;          }
+  .offset-by-ten.columns          { margin-left: 86.6666666667%; }
+  .offset-by-eleven.columns       { margin-left: 95.3333333333%; }
+  .offset-by-one-third.columns    { margin-left: 34.6666666667%; }
+  .offset-by-two-thirds.columns   { margin-left: 69.3333333333%; }
+  .offset-by-one-half.columns     { margin-left: 52%; }
+
+}
+
+.row {
+	padding: 0 10%;
+}
+
+.container:after,
+.row:after,
+.row-cs:after,
+.background_titles:after,
+.u-cf {
+  content: "";
+  display: table;
+  clear: both; 
+}
+
+
+// NAVIGATION STYLES
+
+.logo {
+	position: fixed;
+	top: -5px;
+	left: 48%;
+	z-index: 0;
+	padding: 20px 20px;
+	background-color: $third-color;
+}
+
+.outline {
+	width: 95%;
+	height: 90%;
+	border: solid 1px $primary-color;
+	position: fixed;
+	z-index: -2;
+  top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.l-nav {
+	font-family: $primary-font;
+	color: $primary-color;
+	background-color: $third-color;
+	padding: 0 20px;
+	transform: rotate(270deg);
+	position: fixed;
+	top: 48%;
+	left: -9px;
+	z-index: 0;
+	text-decoration: none;
+	@include transition-all(all 0.3s ease);
+}
+
+.r-nav {
+	font-family: $primary-font;
+	color: $primary-color;
+	background-color: $third-color;
+	padding: 0 20px;
+	transform: rotate(90deg);
+	position: fixed;
+	top: 46%;
+	right: -20px;
+	z-index: 0;
+	text-decoration: none;
+	@include transition-all(all 0.3s ease);
+}
+
+.b-nav {
+	font-family: $primary-font;
+	color: $primary-color;
+	background-color: $third-color;
+	padding: 0 20px;
+	position: fixed;
+	text-align: center;
+	margin: 0 auto;
+	bottom: 25px;
+	left: 47%;
+	text-decoration: none;
+	@include transition-all(all 0.3s ease);
+}
+
+.l-nav:hover, .r-nav:hover {
+	text-decoration: underline;
+	@include transition-all(all 0.3s ease);
+}
+
+// HOMEPAGE STYLES
+
+.intro {
+	height: 100vh;
+}
+
+.content-pull {
+	position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.content-center_1 {
+	position: relative;
+  top: 50%;
+  transform: translateY(25%);
+}
+
+.content-center_2 {
+	position: relative;
+	top: 50%;
+	transform: translatey(10%);
+}
+
+.intro .content {
+	position: relative;
+  top: 50%;
+  transform: translateY(25%);
+}
+
+.gallery .img {
+	background-size: cover;
+	background-position: 50% 50%;
+	width: 75%;
+	height: 75vh;
+	float: right;
+	box-shadow: 0 9px 33px 2px rgba(0,0,0,0.42);
+	@include transition-all(all 0.3s ease);
+}
+
+.gallery .img:hover {
+	box-shadow: none;
+	@include transition-all(all 0.3s ease);
+}
+
+#google_map {
+	width: 75%;
+	height: 75vh;
+	float: left;
+	box-shadow: 0 9px 33px 2px rgba(0,0,0,0.42);
+	@include transition-all(all 0.3s ease);
+}
+
+#google_map_2 {
+	width: 75%;
+	height: 75vh;
+	float: right;
+	box-shadow: 0 9px 33px 2px rgba(0,0,0,0.42);
+	@include transition-all(all 0.3s ease);
+}
+
+#google_map:hover {
+	box-shadow: none;
+	@include transition-all(all 0.3s ease);
+}
+
+.accomodations .map .img {
+	background-size: cover;
+	background-position: 50% 50%;
+	width: 75%;
+	height: 75vh;
+	float: right;
+	box-shadow: 0 9px 33px 2px rgba(0,0,0,0.42);
+	@include transition-all(all 0.3s ease);
+}
+
+.accomodations .map .img:hover {
+	box-shadow: none;
+	@include transition-all(all 0.3s ease);
+}
+
+.honeymoon img {
+	max-width: 100%;
+	height: auto;
+}
+
+.honeymoon .content {
+	max-width: 75%;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.rsvp .content {
+	margin: 0 auto;
+	text-align: center;
+}
+
+.rsvp_img {
+	position: absolute;
+	width: 30%;
+	z-index: -10;
+	left: 0;
+}
+
+.rsvp_img2 {
+	position: absolute;
+	width: 30%;
+	right: 0;
+	z-index: -10;
+}
+
+.card_icon {
+  width: 25px;
+	height: auto;
+	padding: 0 15px;
+  transform: translateY(3px);
+  display: inline-block;
+}
+
+// WHAT TO DO PAGE
+
+
+.half_side {
+	position: absolute;
+	width: 50vw;
+	height: 100vh;
+	left: 0;
+	background-size: cover;
+	background-position: 50% 50%;
+	z-index: -4;
+}
+
+.content-push {
+	padding-left: 5%;
+}
