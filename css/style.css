@@ -35,7 +35,8 @@ h3 {
   color: #E8BC7C;
   margin: 10px 0; }
 
-p, body {
+p,
+body {
   font-family: "DIN OT";
   font-size: 18px;
   font-weight: lighter;
@@ -212,15 +213,16 @@ input:focus {
 
 .logo {
   position: fixed;
-  top: -5px;
-  left: 48%;
+  top: -1px;
+  left: 47%;
   z-index: 0;
   padding: 20px 20px;
-  background-color: #fffdf7; }
+  background-color: #fffdf7;
+  border: 1px solid #E8BC7C; }
 
 .outline {
-  width: 95%;
-  height: 90%;
+  width: calc(100% - 40px * 2);
+  height: calc(100% - 40px * 2);
   border: solid 1px #E8BC7C;
   position: fixed;
   z-index: -2;
@@ -240,9 +242,10 @@ input:focus {
   transform: rotate(270deg);
   position: fixed;
   top: 48%;
-  left: -9px;
+  left: -6px;
   z-index: 0;
   text-decoration: none;
+  border: 1px solid #E8BC7C;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   -ms-transform: all 0.3s ease;
@@ -259,9 +262,10 @@ input:focus {
   transform: rotate(90deg);
   position: fixed;
   top: 46%;
-  right: -20px;
+  right: -17px;
   z-index: 0;
   text-decoration: none;
+  border: 1px solid #E8BC7C;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   -ms-transform: all 0.3s ease;
@@ -279,13 +283,15 @@ input:focus {
   bottom: 25px;
   left: 47%;
   text-decoration: none;
+  border: 1px solid #E8BC7C;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   -ms-transform: all 0.3s ease;
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease; }
 
-.l-nav:hover, .r-nav:hover {
+.l-nav:hover,
+.r-nav:hover {
   text-decoration: underline;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
@@ -293,36 +299,45 @@ input:focus {
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease; }
 
-.intro {
+.intro,
+.information,
+.accomodations {
   height: 100vh; }
+  .intro .row,
+  .information .row,
+  .accomodations .row {
+    height: 100vh;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-content: center;
+    -ms-flex-line-pack: center;
+    align-content: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row; }
+  .intro .content,
+  .information .content,
+  .accomodations .content {
+    position: relative; }
 
-.content-pull {
-  position: relative;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%); }
-
-.content-center_1 {
-  position: relative;
-  top: 50%;
-  -webkit-transform: translateY(25%);
-  -ms-transform: translateY(25%);
-  transform: translateY(25%); }
-
-.content-center_2 {
-  position: relative;
-  top: 50%;
-  -webkit-transform: translatey(10%);
-  -ms-transform: translatey(10%);
-  transform: translatey(10%); }
-
-.intro .content {
-  position: relative;
-  top: 50%;
-  -webkit-transform: translateY(25%);
-  -ms-transform: translateY(25%);
-  transform: translateY(25%); }
+.honeymoon,
+.rsvp {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row; }
 
 .gallery .img {
   background-size: cover;
@@ -398,7 +413,8 @@ input:focus {
 
 .honeymoon img {
   max-width: 100%;
-  height: auto; }
+  height: auto;
+  z-index: -1; }
 
 .honeymoon .content {
   max-width: 75%;
@@ -441,3 +457,96 @@ input:focus {
 
 .content-push {
   padding-left: 5%; }
+
+@media (max-width: 758px) {
+  section {
+    height: auto !important;
+    display: block; }
+  .row {
+    padding: 0 5%; }
+  .intro .row,
+  .information .row,
+  .accomodations .row {
+    display: block;
+    height: auto;
+    padding: 10% 5%; }
+  .honeymoon {
+    display: block;
+    height: auto; }
+    .honeymoon .row {
+      padding: 10% 5%; }
+      .honeymoon .row .content button {
+        width: 100%; }
+  .rsvp {
+    display: block;
+    height: auto; }
+    .rsvp .content {
+      padding: 10% 5%; }
+      .rsvp .content button {
+        width: 100%; }
+  .r-nav,
+  .l-nav {
+    display: none; }
+  h1 {
+    font-size: 36px;
+    line-height: 42px; }
+  h3 {
+    font-size: 100px;
+    line-height: 120px; }
+  p {
+    font-size: 14px;
+    line-height: 18px; }
+  .gallery .img {
+    width: 100%;
+    height: 300px; }
+  .gallery button {
+    width: 100%; }
+  .information .map #google_map {
+    width: 100%;
+    height: 300px; }
+  .information .map button {
+    width: 100%; }
+  .accomodations .map #google_map_2 {
+    width: 100%;
+    height: 300px; }
+  .accomodations .map button {
+    width: 100%; } }
+
+.gallery-intro {
+  width: 80%;
+  margin: 0 auto;
+  z-index: -3;
+  padding: 10% 0  0 0; }
+  .gallery-intro hr {
+    color: #E8BC7C;
+    border: 1px solid #E8BC7C; }
+
+.gallery_title {
+  text-align: center;
+  padding-bottom: 2%; }
+
+.grid {
+  width: 80%;
+  padding: 5% 0 10% 0;
+  margin: 0 auto; }
+
+.grid:after {
+  content: '';
+  display: block;
+  clear: both; }
+
+.grid:after {
+  content: '';
+  display: block;
+  clear: both; }
+
+.grid-sizer,
+.grid-item {
+  width: 33.333%; }
+
+.grid-item {
+  float: left; }
+
+.grid-item img {
+  display: block;
+  max-width: 100%; }
